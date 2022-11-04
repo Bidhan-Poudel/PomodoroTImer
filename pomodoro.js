@@ -3,6 +3,8 @@
 
 console.log("sync");
 
+const body=document.querySelector("body");
+
 //1. Select all the tabs from tab list
 const PomodoroTab = document.getElementById("pomodoro-tab");
 const ShortBreakTab = document.getElementById("short-break-tab");
@@ -30,21 +32,26 @@ lStartTimer.textContent = "START";
 //Add click event listener on each tab
 PomodoroTab.addEventListener("click", function () {
   console.log("Pomodoro");
-
+  body.style.backgroundColor="rgb(217,85,80)";
+  body.style.transition= "background-color 0.5s ease-in-out 0s";
+  
   //TAB SELECT
   PomodoroTab.classList.add("active");
   ShortBreakTab.classList.remove("active");
   LongBreakTab.classList.remove("active");
-
+  
   //TAB CONTENT
   PomodoroContent.classList.add("active");
   ShortBreakContent.classList.remove("active");
   LongBreakContent.classList.remove("active");
+
+  
 });
 
 ShortBreakTab.addEventListener("click", () => {
   console.log("short break");
-
+  body.style.backgroundColor="rgb(56, 133, 138)";
+  body.style.transition= "background-color 0.5s ease-in-out 0s";
   //TAB SELECT
   ShortBreakTab.classList.add("active");
   PomodoroTab.classList.remove("active");
@@ -58,12 +65,13 @@ ShortBreakTab.addEventListener("click", () => {
 
 LongBreakTab.addEventListener("click", () => {
   console.log("long break");
-
+  body.style.backgroundColor="rgb(57, 112, 151)";
+  body.style.transition= "background-color 0.5s ease-in-out 0s";
   //TAB SELECT
   LongBreakTab.classList.add("active");
   ShortBreakTab.classList.remove("active");
   PomodoroTab.classList.remove("active");
-
+  
   //TAB CONTENT
   LongBreakContent.classList.add("active");
   ShortBreakContent.classList.remove("active");
